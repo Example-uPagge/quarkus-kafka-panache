@@ -10,14 +10,14 @@ import javax.enterprise.context.ApplicationScoped;
 @RequiredArgsConstructor
 public class KafkaHandler {
 
-    private final PanacheRepositoryImpl panacheRepository;
+    private final EntityRepositoryImpl panacheRepository;
 
     @Incoming("test")
     public Uni<Void> handle(KafkaMessage message) {
         System.out.println("Получено сообщение " + message);
         final EntityForDb entityForDb = new EntityForDb();
         entityForDb.setCount(message.getCount());
-        return panacheRepository.persistAndFlush(entityForDb).replaceWithVoid();
+        return panacheRepository.save(entityForDb).replaceWithVoid();
     }
 
 }

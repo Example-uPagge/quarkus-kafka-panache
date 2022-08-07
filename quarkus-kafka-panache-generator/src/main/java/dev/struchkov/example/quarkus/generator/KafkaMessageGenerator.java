@@ -21,7 +21,7 @@ public class KafkaMessageGenerator {
 
 
     public void start(@Observes StartupEvent ev) {
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 50; i++) {
             final KafkaMessage kafkaMessage = new KafkaMessage();
             kafkaMessage.setCount(i);
             telegramChannel.sendAndAwait(kafkaMessage);

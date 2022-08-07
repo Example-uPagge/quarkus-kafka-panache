@@ -6,6 +6,7 @@ quarkus:
     jdbc: false
     reactive:
       url: postgresql://localhost:5432/quarkus_test
+      max-size: 20
   hibernate-orm:
     database:
       generation: update
