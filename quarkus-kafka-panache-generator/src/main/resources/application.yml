@@ -1,0 +1,9 @@
+kafka:
+  bootstrap:
+    servers: localhost:9092
+mp:
+  messaging:
+    outgoing:
+      test:
+        topic: test
+        connector: smallrye-kafka
