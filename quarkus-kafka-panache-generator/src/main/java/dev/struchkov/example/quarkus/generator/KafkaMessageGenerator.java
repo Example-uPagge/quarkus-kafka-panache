@@ -19,7 +19,6 @@ public class KafkaMessageGenerator {
         this.telegramChannel = telegramChannel;
     }
 
-
     public void start(@Observes StartupEvent ev) {
         for (int i = 0; i < 50; i++) {
             final KafkaMessage kafkaMessage = new KafkaMessage();
